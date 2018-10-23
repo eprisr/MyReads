@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import BookShelf from './BookShelf';
 
 class AllShelves extends Component {
 	state = {}
@@ -11,7 +12,7 @@ class AllShelves extends Component {
 						<h1>MyReads</h1>
 					</div>
 					<div className="list-books-content">
-						// BookShelf
+						<BookShelf />
 					</div>
 					<div className="open-search">
 						<a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
@@ -20,7 +21,7 @@ class AllShelves extends Component {
         )}
       </div>
 		)
-	}
-}
+	};
+};
 
 export default AllShelves;

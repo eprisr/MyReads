@@ -1,6 +1,7 @@
-import React from 'react'
-// import * as BooksAPI from './BooksAPI'
-import './App.css'
+import React from 'react';
+// import * as BooksAPI from './BooksAPI';
+import './App.css';
+import AllShelves from './AllShelves';
 
 class BooksApp extends React.Component {
   state = {
@@ -15,9 +16,9 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      
+      <AllShelves />
     )
-  }
-}
+  };
+};
 
 export default BooksApp
