@@ -1,0 +1,39 @@
+<-- PROCESS -->
+Outline Steps
+Draw App
+	What do screens look like
+	How components are connected
+Architecture
+Develop piece by piece
+
+<-- FUNCTIONALITY -->
+Displays list of shelves:
+	Currently Reading
+	Want to Read
+	Read
+Ability to change shelves
+	Default is current shelf
+Link to /search page to find new books to add
+	Input field updates book as typing
+Book on bookshelf same default shelf as in search option
+
+<-- RUBRIC -->
+Easy to install and launch w/ instructions (npm install and npm start)
+Main page shows 3 books
+	Correct shelf, title and author shown
+Main page shows control to move books
+Main page has same info when page is refreshed
+Search page has input field
+Search page functions
+	User input changes books
+	Results cleared when input is cleared
+	Works without thumbnail or author (test: 'poetry' and 'biography')
+	Search for multiple words
+Search page allows selection of shelf
+Search page reflects selection of home and changes home selection
+Search page updates main page showing changes when returning to main
+Main page contains link to search and search to main
+Component state passed down from parent component to child
+	setState used correctly
+Books have same state on both pages
+Code runs no errors
