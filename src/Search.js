@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Search extends Component {
-	state = {}
+class Search extends React.Component {
+	//state = {}
 
 	render() {
 		return (

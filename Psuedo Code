@@ -37,3 +37,18 @@ Component state passed down from parent component to child
 	setState used correctly
 Books have same state on both pages
 Code runs no errors
+
+<-- STEPS -->
+Install ReactRouter for routing, escapeRegExp and SortBy for live input and flitering
+Divide initial code into serparate components
+Import BrowserRouter into index.js
+Import BooksAPI into App.js for immediate use
+Display 3 shelves/Show Control/Refreshes correctly
+	Mount the Books API component
+	Make name of shelves dynamic (add to BookShelf component in AllShelves)
+		Map and Filter through books to match shelf attribute to proper shelf
+	Update author, title and images to display correctly
+Search input/functionality
+	Input field dynamic and live
+	Selects shelf and reflects correctly on home and vice versa
+Route main page and search page
