@@ -6,7 +6,6 @@ class AllShelves extends React.Component {
 	static propTypes = {
 		books: PropTypes.array
 	}
-	//state = {}
 
 	render() {
 		return(
@@ -21,18 +20,21 @@ class AllShelves extends React.Component {
 							books={this.props.books.filter((book) => (
 								book.shelf === "currentlyReading"
 							))}
+							updateShelf={this.props.updateShelf}
 						/>
 						<BookShelf
 							name="Want to Read"
 							books={this.props.books.filter((book) => (
 								book.shelf === "wantToRead"
 							))}
+							updateShelf={this.props.updateShelf}
 						/>
 						<BookShelf
 							name="Read"
 							books={this.props.books.filter((book) => (
 								book.shelf === "read"
 							))}
+							updateShelf={this.props.updateShelf}
 						/>
 					</div>
 				</div>

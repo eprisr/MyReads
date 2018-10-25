@@ -20,6 +20,14 @@ class BooksApp extends React.Component {
       this.setState({ books })
     })
   }
+  updateShelf = (book, shelf) => { //takes in book and shelf of book clicked
+		BooksAPI.update(book, shelf).then((response) => { //updates
+      book.shelf = shelf; //sets shelf to book.shelf
+      this.setState((state) => ({ //changes state, passes function and merges
+        books: state.books.filter((b) => b.id !== book.id).concat({book}) //filters through books, removes book from on shelf and place on another
+      }))
+    })
+	}
   render() {
     return (
       <div className='App'>
@@ -28,6 +36,7 @@ class BooksApp extends React.Component {
         ) : (
           <AllShelves
             books={this.state.books}
+            updateShelf={this.updateShelf}
           />
         )}
         <div className='open-search'>
