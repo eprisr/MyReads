@@ -12,20 +12,23 @@ class BooksApp extends React.Component {
      * users can use the browser's back and forward buttons to navigate between
      * pages, as well as provide a good URL they can bookmark and share.
      */
-    books: [],
+    books: [], //sets empty state array to be filled with API
     showSearchPage: false
   }
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
-      this.setState({ books })
+      this.setState({ books }) //Fills array with books
     })
   }
   updateShelf = (book, shelf) => { //takes in book and shelf of book clicked
 		BooksAPI.update(book, shelf).then((response) => { //updates
-      book.shelf = shelf; //sets shelf to book.shelf
+      console.log(response);
+      book.shelf = shelf; //updates book.shelf to shelf
+      console.log(book.shelf);
       this.setState((state) => ({ //changes state, passes function and merges
         books: state.books.filter((b) => b.id !== book.id).concat({book}) //filters through books, removes book from on shelf and place on another
       }))
+      console.log(book);
     })
 	}
   render() {
@@ -35,8 +38,8 @@ class BooksApp extends React.Component {
           <Search />
         ) : (
           <AllShelves
-            books={this.state.books}
-            updateShelf={this.updateShelf}
+            books={this.state.books} //passes down all books
+            updateShelf={this.updateShelf} //passes down function
           />
         )}
         <div className='open-search'>

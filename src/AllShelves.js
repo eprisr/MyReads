@@ -16,11 +16,11 @@ class AllShelves extends React.Component {
 				<div className="list-books-content">
 					<div>
 						<BookShelf
-							name="Currently Reading"
+							name="Currently Reading" //Sets name of bookshelf
 							books={this.props.books.filter((book) => (
-								book.shelf === "currentlyReading"
+								book.shelf === "currentlyReading" //keeps books with currentlyReading
 							))}
-							updateShelf={this.props.updateShelf}
+							updateShelf={this.props.updateShelf} //passes down function
 						/>
 						<BookShelf
 							name="Want to Read"
