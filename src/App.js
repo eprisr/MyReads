@@ -17,7 +17,7 @@ class BooksApp extends React.Component {
   }
   changeShelf = (book) => {
     this.setState((state) => ({
-      booksOnShelf: state.booksOnShelf.filter((b) => b.id !== book.id)
+      booksOnShelf: state.booksOnShelf.filter((b) => b.id !== book.id).concat([book])
     }))
   }
   searchResults(query) {
@@ -32,6 +32,7 @@ class BooksApp extends React.Component {
       <div className="app">
         <Route exact path='/' render={() => (
           <BookShelf
+            changeShelf={this.changeShelf}
             booksOnShelf={this.state.booksOnShelf}
           />
         )}/>

@@ -1,7 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 class Search extends React.Component {
+	static propTypes = {
+		books: PropTypes.array.isRequired
+	}
+	state = {
+		query: ''
+	}
+	updateQuery = (query) => {
+		this.setState({ query: query.trim() })
+	}
 	render() {
 		return (
 			<div className="search-books">
