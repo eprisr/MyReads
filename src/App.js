@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import Books from './Books'
+import BookShelf from './BookShelf'
 import Search from './Search'
 import * as BooksAPI from './utils/BooksAPI'
 import './App.css'
@@ -15,6 +15,11 @@ class BooksApp extends React.Component {
       this.setState({ booksOnShelf });
     })
   }
+  changeShelf = (book) => {
+    this.setState((state) => ({
+      booksOnShelf: state.booksOnShelf.filter((b) => b.id !== book.id)
+    }))
+  }
   searchResults(query) {
     BooksAPI.search(query).then(books => {
       this.setState(state=> ({
@@ -26,15 +31,12 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
         <Route exact path='/' render={() => (
-          <Books
+          <BookShelf
             booksOnShelf={this.state.booksOnShelf}
           />
         )}/>
         <Route path='/search' render={() => (
           <Search
-            searchResults={(book) => {
-              this.searchResults(book)
-            }}
             books={this.state.books}
           />
         )}/>
