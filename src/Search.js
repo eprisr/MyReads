@@ -12,7 +12,8 @@ class Search extends React.Component {
 		query: ''
 	}
 	updateQuery = (query) => {
-		this.setState({ query: query.trim() })
+		this.setState({ query: query.trim() }, this.props.searchResults(query))
+
 	}
 	render() {
 		const { books } = this.props

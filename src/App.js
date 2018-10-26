@@ -24,7 +24,7 @@ class BooksApp extends React.Component {
     BooksAPI.search(query).then(books => {
       console.log(books)
       this.setState(state=> ({
-        books: state.books.concat([ books ])
+        books: state.books.concat( books )
       }))
     })
   }
@@ -39,7 +39,9 @@ class BooksApp extends React.Component {
         )}/>
         <Route path='/search' render={() => (
           <Search
-            searchResults={this.searchResults}
+            searchResults={(query) => {
+              this.searchResults(query)
+            }}
             books={this.state.books}
           />
         )}/>
