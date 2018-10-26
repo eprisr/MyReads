@@ -5,6 +5,7 @@ class BookShelf extends React.Component {
 	//state = {}
 
 	render() {
+		console.log(this.props.books)
 		return (
 			<div className="bookshelf">
 				<h2 className="bookshelf-title">{this.props.name}</h2>

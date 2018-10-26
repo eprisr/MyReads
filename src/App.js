@@ -25,10 +25,11 @@ class BooksApp extends React.Component {
       console.log(response);
       book.shelf = shelf; //updates book.shelf to shelf
       console.log(book.shelf);
-      this.setState((state) => ({ //changes state, passes function and merges
-        books: state.books.filter((b) => b.id !== book.id).concat({book}) //filters through books, removes book from on shelf and place on another
+      this.setState((props) => ({ //changes state, passes function and merges
+        books: props.books.filter((b) => b.id !== book.id).concat(book) //filters through books, removes book from on shelf and place on another
       }))
       console.log(book);
+      console.log(this.state.books.book)
     })
 	}
   render() {
