@@ -17,7 +17,6 @@ class Search extends React.Component {
 		this.setState({ query: trimmedQuery }, this.props.searchResults(query))
 	}
 	render() {
-		console.log(this.state.query)
 		const { books, changeShelf } = this.props
 		const { query } = this.state
 
