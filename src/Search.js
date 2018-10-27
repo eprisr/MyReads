@@ -17,10 +17,11 @@ class Search extends React.Component {
 		this.setState({ query: trimmedQuery }, this.props.searchResults(query))
 	}
 	render() {
-		const { books, changeShelf, booksOnShelf } = this.props
+		console.log(this.state.query)
+		const { books, changeShelf } = this.props
 		const { query } = this.state
 
-		let results
+		let results = []
 		if (query) {
 			const match = new RegExp(escapeRegExp(query), 'i')
 			results = books.filter((book) => match.test(book.title))

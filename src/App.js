@@ -24,6 +24,9 @@ class BooksApp extends React.Component {
     })
   }
   searchResults(query) {
+    if(query === "" || query === undefined) {
+      return this.setState({ results: [] }, { books:[] })
+    }
     BooksAPI.search(query).then(books => {
       //forEach - Ryan Waite's FEND 6 Long Tutorial
       books.forEach(b => { //loops through each book (search)
