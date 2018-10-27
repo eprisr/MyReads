@@ -6,9 +6,9 @@ import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 
 class Search extends React.Component {
-	// static propTypes = {
-	// 	books: PropTypes.array.isRequired
-	// }
+	static propTypes = {
+	 	books: PropTypes.array
+	}
 	state = {
 		query: ''
 	}
