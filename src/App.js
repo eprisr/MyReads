@@ -25,13 +25,11 @@ class BooksApp extends React.Component {
   }
   searchResults(query) {
     BooksAPI.search(query).then(books => {
-      console.log(books)
+      //forEach - Ryan Waite's FEND 6 Long Tutorial
       books.forEach(b => { //loops through each book (search)
         //Holds book in search that's already on shelf
         let s = this.state.booksOnShelf.filter(bOS => bOS.id === b.id);
         //Sets book.shelf to that of booksonShelf.shelf
-        console.log(b)
-        console.log(s)
         if(s[0]) {
           b.shelf = s[0].shelf;
         }
@@ -40,7 +38,6 @@ class BooksApp extends React.Component {
     })
   }
   render() {
-    console.log(this.state.books)
     return (
       <div className="app">
         <Route exact path='/' render={() => (

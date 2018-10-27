@@ -13,7 +13,8 @@ class Search extends React.Component {
 		query: ''
 	}
 	updateQuery = (query) => {
-		this.setState({ query: query.trim() }, this.props.searchResults(query))
+		let trimmedQuery = query.replace(/^\s+/, '')
+		this.setState({ query: trimmedQuery }, this.props.searchResults(query))
 	}
 	render() {
 		const { books, changeShelf, booksOnShelf } = this.props
@@ -27,7 +28,6 @@ class Search extends React.Component {
 			results = books
 		}
 		results.sort(sortBy('title'))
-		console.log(results)
 		return (
 			<div className="search-books">
 				<div className="search-books-bar">
