@@ -3,18 +3,15 @@ import { Link } from 'react-router-dom'
 
 class Books extends React.Component {
 	render() {
-		const { booksOnShelf } = this.props
+		const { booksOnShelf, changeShelf } = this.props
 
 		return (
 			<div>
 				<div className="list-books">
-					<div className="list-books-title">
-						<h1>MyReads</h1>
-					</div>
 					<div className="list-books-content">
 						<div>
 							<div className="bookshelf">
-								<h2 className="bookshelf-title">Currently Reading</h2>
+								<h2 className="bookshelf-title">{this.props.name}</h2>
 								<div className="bookshelf-books">
 									<ol className="books-grid">
 										{booksOnShelf.map((book) => (
@@ -31,7 +28,7 @@ class Books extends React.Component {
 													<div className="book-shelf-changer">
 														<select
 															value={book.shelf}
-															onChange={(event) => this.changeShelf(event.target.value)}
+															onChange={(event) => changeShelf(book, event.target.value)}
 														>
 															<option value="move" disabled>Move to...</option>
 															<option value="currentlyReading">Currently Reading</option>
