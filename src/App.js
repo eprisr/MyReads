@@ -26,9 +26,17 @@ class BooksApp extends React.Component {
   searchResults(query) {
     BooksAPI.search(query).then(books => {
       console.log(books)
-      this.setState(state=> ({
-        books: state.books.concat( books )
-      }))
+      books.forEach(b => { //loops through each book (search)
+        //Holds book in search that's already on shelf
+        let s = this.state.booksOnShelf.filter(bOS => bOS.id === b.id);
+        //Sets book.shelf to that of booksonShelf.shelf
+        console.log(b)
+        console.log(s)
+        if(s[0]) {
+          b.shelf = s[0].shelf;
+        }
+      })
+      this.setState({ books })
     })
   }
   render() {

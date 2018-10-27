@@ -6,18 +6,17 @@ import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 
 class Search extends React.Component {
-	static propTypes = {
-		books: PropTypes.array.isRequired
-	}
+	// static propTypes = {
+	// 	books: PropTypes.array.isRequired
+	// }
 	state = {
 		query: ''
 	}
 	updateQuery = (query) => {
 		this.setState({ query: query.trim() }, this.props.searchResults(query))
-
 	}
 	render() {
-		const { books, changeShelf } = this.props
+		const { books, changeShelf, booksOnShelf } = this.props
 		const { query } = this.state
 
 		let results
@@ -28,6 +27,7 @@ class Search extends React.Component {
 			results = books
 		}
 		results.sort(sortBy('title'))
+		console.log(results)
 		return (
 			<div className="search-books">
 				<div className="search-books-bar">
