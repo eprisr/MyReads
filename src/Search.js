@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Book from './Book'
 import PropTypes from 'prop-types'
-import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 
 class Search extends React.Component {
@@ -22,10 +21,10 @@ class Search extends React.Component {
 
 		let results = []
 		if (query) {
-			const match = new RegExp(escapeRegExp(query), 'i')
-			results = books.filter((book) => match.test(book.title))
+			results = books
 		}
 		results.sort(sortBy('title'))
+
 		return (
 			<div className="search-books">
 				<div className="search-books-bar">

@@ -28,6 +28,7 @@ class BooksApp extends React.Component {
       return this.setState({ results: [] })
     }
     BooksAPI.search(query).then(books => {
+      console.log(books)
       //forEach - Ryan Waite's FEND 6 Long Tutorial
       books.forEach(b => { //loops through each book (search)
         //Holds book in search that's already on shelf
@@ -40,6 +41,7 @@ class BooksApp extends React.Component {
       this.setState({ books })
     }).catch(error => {
       this.setState({ results: [] })
+      this.setState({ books: [] })
     })
   }
   render() {
