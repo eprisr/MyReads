@@ -24,8 +24,6 @@ class Search extends React.Component {
 		if (query) {
 			const match = new RegExp(escapeRegExp(query), 'i')
 			results = books.filter((book) => match.test(book.title))
-		} else {
-			results = results
 		}
 		results.sort(sortBy('title'))
 		return (
