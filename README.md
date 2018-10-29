@@ -1,6 +1,6 @@
 # MyReads Project
 
-React fundamentals
+MyReads helps build basic knowledge of React by creating components and making them work together while ensuring each one only does one thing (i.e. update query, handle books, etc.).
 
 ## Installation
 
