@@ -1,25 +1,25 @@
 {
-    "name": "my-reads",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "escape-string-regexp": "^1.0.5",
-        "prop-types": "^15.6.1",
-        "react": "^16.3.2",
-        "react-dom": "^16.3.2",
-        "react-router-dom": "^4.3.1",
-        "serve": "^10.1.1",
-        "sort-by": "^1.2.0"
-    },
-    "devDependencies": {
-        "react-scripts": "1.1.4"
-    },
-    "scripts": {
-        "dev": "react-scripts start",
-        "start": "serve -s build",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject",
-        "heroku-postbuild": "npm run build"
-    }
+	"name": "my-reads",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"escape-string-regexp": "^1.0.5",
+		"prop-types": "^15.6.1",
+		"react": "^16.3.2",
+		"react-dom": "^16.3.2",
+		"react-router-dom": "^4.3.1",
+		"serve": "^10.1.1",
+		"sort-by": "^1.2.0"
+	},
+	"scripts": {
+		"dev": "vite",
+		"start": "serve -s build",
+		"build": "vite build",
+		"test": "vitest",
+		"heroku-postbuild": "npm run build"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-react": "^5.1.3",
+		"vite": "^7.3.1"
+	}
 }
